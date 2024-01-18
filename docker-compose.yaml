@@ -1,14 +1,17 @@
+version: '3'
+
+volumes:
+  stack_ante:
+
 services:
   private-gpt:
     build:
-      dockerfile: Dockerfile.local
+      dockerfile: Dockerfile.external
     volumes:
-      - ./local_data/:/home/worker/app/local_data
-      - ./models/:/home/worker/app/models
+      - stack_ante:/home/worker/app
     ports:
-      - 8001:8080
+      - 3500:8080
     environment:
       PORT: 8080
       PGPT_PROFILES: docker
-      PGPT_MODE: local
-
+      PGPT_MODE: external

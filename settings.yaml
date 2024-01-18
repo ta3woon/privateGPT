@@ -19,6 +19,8 @@ server:
 data:
   local_data_folder: local_data/private_gpt
 
+
+
 ui:
   enabled: true
   path: /
@@ -61,5 +63,6 @@ sagemaker:
   embedding_endpoint_name: huggingface-pytorch-inference-2023-11-03-07-41-36-479
 
 openai:
-  api_key: ${OPENAI_API_KEY:}
+  api_key: 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}
   model: gpt-3.5-turbo
+

@@ -14,6 +14,7 @@ FROM base as dependencies
 WORKDIR /home/worker/app
 COPY pyproject.toml poetry.lock ./
 
+RUN apt-get update && apt-get install -y gcc python3-dev
 RUN poetry install --with ui
 
 FROM base as app
